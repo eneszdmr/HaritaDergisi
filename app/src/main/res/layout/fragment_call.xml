@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CallFragment">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/call_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:fontFamily="@font/fashionbold"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:text="@string/call_title" />
+
+                <TextView
+                    android:id="@+id/call_adres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:textSize="@dimen/_17ssp"
+                    android:lineSpacingExtra="@dimen/_25ssp"
+                    android:layout_below="@id/call_title"
+                    android:text="@string/call_texts" />
+                <TextView
+                    android:id="@+id/call_posta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:textSize="@dimen/_17ssp"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:lineSpacingExtra="@dimen/_25ssp"
+                    android:layout_below="@id/call_adres"
+                    android:autoLink="email"
+                    android:textStyle="bold"
+                    android:text="E-posta: haritadergisi@harita.gov.tr"/>
+
+                <TextView
+                    android:id="@+id/call_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_17ssp"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:lineSpacingExtra="@dimen/_25ssp"
+                    android:layout_below="@id/call_posta"
+                    android:autoLink="phone"
+                    android:textStyle="bold"
+                    android:text="Tel : (0312) 595 21 22"/>
+
+                <TextView
+                    android:id="@+id/call_fax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_17ssp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:lineSpacingExtra="@dimen/_25ssp"
+                    android:layout_below="@id/call_phone"
+                    android:autoLink="all"
+                    android:textStyle="bold"
+                    android:text="Fax : (0312) 320 14 95"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/call_fax"
+    android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/btninstagram"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:layout_below="@id/call_fax"
+                    android:layout_width="@dimen/_40sdp"
+                    android:src="@drawable/ic_instagram"
+                    android:layout_height="@dimen/_40sdp"/>
+                <ImageView
+                    android:id="@+id/btntwitter"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:layout_below="@id/call_fax"
+                    android:layout_width="@dimen/_40sdp"
+                    android:src="@drawable/ic_twit"
+                    android:layout_height="@dimen/_40sdp"/>
+</LinearLayout>
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

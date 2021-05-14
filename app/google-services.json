@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817494440453",
+    "project_id": "haritadergisi-8a63f",
+    "storage_bucket": "haritadergisi-8a63f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817494440453:android:9dce6ffc6ea23626dbba6c",
+        "android_client_info": {
+          "package_name": "com.hgm.haritagenelmudurlugu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817494440453-ia951abmianeds152p4aa484610r7lku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu9EHiC7FBNOHOH8-OgFle6-UzU4_HEs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817494440453-ia951abmianeds152p4aa484610r7lku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

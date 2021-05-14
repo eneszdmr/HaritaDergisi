@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_15ssp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/etUnvani"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ünvanı Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etAdiSoyadi"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Adı Soyadı Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etKurumu"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Kurumu Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etBransi"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Branşı Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>

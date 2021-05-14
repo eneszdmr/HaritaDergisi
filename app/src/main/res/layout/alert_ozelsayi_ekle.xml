@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_15ssp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/etUnvani"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Özel Sayı Adı Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etAdiSoyadi"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Özel Sayı Açıklaması Giriniz"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etOzelSayiUrl"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_75ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ems="10"
+            android:hint="Dergi Url Giriniz"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etYazar" />
+
+</LinearLayout>

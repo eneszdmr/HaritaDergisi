@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/tableLayout"
+    android:layout_height="@dimen/_35ssp"
+    android:background="@color/white"
+    android:stretchColumns="1,2,3,4">
+
+    <TableRow
+        android:background="#DBEAE8"
+        android:layout_height="@dimen/_35sdp">
+        <TextView
+            android:id="@+id/tvunvan"
+            android:textSize="@dimen/_10ssp"
+           android:layout_width="@dimen/_5ssp"
+            android:layout_height="@dimen/_34sdp"
+            android:singleLine="true"
+            android:padding="@dimen/_5sdp"
+            android:layout_column="1"/>
+
+        <TextView
+            android:id="@+id/tvadisoyadi"
+            android:layout_column="1"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="@dimen/_25ssp"
+            android:layout_height="@dimen/_34sdp"
+            android:singleLine="true"
+            android:textSize="@dimen/_10ssp" />
+        <TextView
+            android:id="@+id/tvkurumu"
+            android:textSize="@dimen/_10ssp"
+            android:singleLine="true"
+            android:layout_width="@dimen/_25ssp"
+            android:layout_height="@dimen/_34sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_column="1"/>
+        <TextView
+            android:id="@+id/tvbransi"
+            android:textSize="@dimen/_10ssp"
+            android:singleLine="true"
+            android:layout_width="@dimen/_15ssp"
+            android:layout_height="@dimen/_34sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_column="1"/>
+    </TableRow>
+
+</TableLayout>

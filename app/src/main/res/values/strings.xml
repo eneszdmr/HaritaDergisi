@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">HARİTA GENEL MÜDÜRLÜĞÜ</string>
+    <!-- TODO: YAYIN İLKELERİ AŞAĞIDADIR                             -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="yayin_ilkeleri_baslik">YAYIN İLKELERİ</string>
+    <string name="yayin_ilkeleri"> <b>a. Amaç ve Kapsam</b>\n
+        Harita Dergisi, Haritacılık bilim ve tekniğiyle ilgili konularda, Harita Genel Müdürlüğü çalışanları ile üniversite öğretim elemanlarının ve konularında uzman meslek bireylerinin makalelerini yayımlayarak literatüre katkı sağlamayı, ayrıca dünya ve ülkemizdeki bilimsel gelişmelerin ilgililere duyurulmasını amaçlamaktadır.\n\n
+
+Haritacılık ana bilim dalları (jeodezi ve jeofizik, fotogrametri ve uzaktan algılama, coğrafi bilgi sistemleri, kartografya, kamu ölçmeleri) ve haritacılık ile ilgili diğer disiplinlerde (yerbilimleri, uzay teknolojileri, temel bilimler vb.) olmak üzere; bir araştırma çalışmasını bulgu ve sonuçlarıyla yansıtan orijinal bilimsel makaleler, yeterli sayıda bilimsel makaleyi tarayarak, konuyu bugünkü bilgi düzeyinde özetleyen, değerlendiren, bulguları karşılaştırarak eleştiren bilimsel derleme yazılar, orijinalliği ve bilimsel değeri bakımından çok önemli yabancı dilden çeviri bilimsel makaleler Harita Dergisi’nde yayımlanabilir.\n\n
+
+        <b>b. Genel İlkeler</b>\n\n
+(1) Harita dergisi Harita Genel Müdürlüğü tarafından 29 Ekim 1933 tarihinden itibaren yılda iki kez (Ocak-Temmuz), basılı ve online yayımlanan, üniversite kütüphanelerinden erişilebilir olan, ulusal hakemli bilimsel bir dergidir.\n
+(2) Harita Dergisinde yazılar Türkçe veya İngilizce olarak yayımlanabilmektedir.\n
+(3) Harita Dergisi’nin editörü ve beş değişik üniversitenin öğretim üyelerinden oluşmuş Bilim Kurulu bulunmakta ve bilimsel özgün araştırma makaleleri için iki hakemin olumlu görüşü alınmaktadır.\n
+(4) Dergide çift taraflı kör hakemlik uygulanmaktadır.\n
+(5) Dergide yayımlanacak makalelerin incelenmesi için, en az doktora derecesinde akademik unvana sahip hakemler görevlendirilmekte, yayımlanacak makale sayısında kota bulunmamakta ve hakemler tarafından incelenmesi tamamlanan makaleler derginin sıradaki ilk sayısında yayımlanmaktadır.\n
+(6) Yayımlanan yazılardaki fikirler yazarlarına aittir. Harita Genel Müdürlüğünü ve dergiyi sorumlu kılmaz. Dergideki yazı ve resimlerin her hakkı saklıdır.\n
+    \n\n
+Harita Dergisi ayrıca;\n
+(1) Bilimsel ve teknik konularda hazırlanmış ancak hacmi ve özelliği nedeniyle makale şeklinde yayımlanamayan yazılar, bilimsel konferanslar, teknik raporlar, haritacılık yönünden önemli olaylarla ilgili yazılar da olması halinde, Ocak ve Temmuz aylarına ilave özel sayılar şeklinde de yayımlanmakta, (2) TÜBİTAK-ULAKBİM Mühendislik ve Temel Bilimler Veri Tabanında taranmaktadır.\n\n
+
+<b>c. Etik İlkeler</b>\n
+Harita Dergisi, gönderilen bilimsel yazılarda Yayın Etiği Kurulu COPE (Committee on Publication Ethics)’un Editör ve Yazarlar için Uluslararası Standartları ile ICMJE (International Committee of Medical Journal Editors) tavsiyeleri dikkate almaktadır.\n\n
+
+Harita Dergisi’ne online erişim ücretsiz olup, yayımlanmasıyla birlikte web sayfasından erişilebilir. Ayrıca Harita Dergisi basılı olarak belli miktarlarda ilgili yerlere (Bölümün bulunduğu Üniversite Kütüphanelerine, Yüksekokullara vb.) ücretsiz dağıtılmaktadır. Yayımlanacak makaleler için telif ve işlenme ücreti ödenmemektedir.\n</string>
+
+    <!-- TODO: İLETİŞİM BİLGİLERİ AŞAĞIDADIR             -->
+
+    <string name="call_title">DERGİ İLETİŞİM</string>
+    <string name="call_texts">
+        Harita Genel Müdürlüğü\n
+Harita Dergisi Yönetim Kurulu Başkanlığı\n
+06590 Cebeci/ANKARA
+</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+</resources>

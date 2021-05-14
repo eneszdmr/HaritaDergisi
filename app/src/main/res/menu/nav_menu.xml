@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homepage"
+        android:title="Uygulamaya Dön" />
+    <item
+        android:id="@+id/action_makaleSorgu"
+        android:title="Makale Sorgulama" />
+    <item
+        android:id="@+id/action_sonSayi"
+        android:title="Son Sayı" />
+    <item
+        android:id="@+id/action_arsiv"
+        android:title="Dergi Arşivi" />
+    <item
+        android:id="@+id/action_ozelSayilar"
+        android:title="Özel Sayılar" />
+    <item
+        android:id="@+id/action_yonetim"
+        android:title="Dergi Yönetim Kurulu" />
+    <item
+        android:id="@+id/action_bilim"
+        android:title="Dergi Bilim Kurulu" />
+    <item
+        android:id="@+id/action_yazimEsaslari"
+        android:title="Makale Yazım Esasları" />
+    <item
+        android:id="@+id/action_yazimSablonu"
+        android:title="Makale Yazım Şablonu" />
+    <item
+        android:id="@+id/cikis"
+        android:title="Çıkış" />
+</menu>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_10sdp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Admin.sonSayiFragment">
+
+    <EditText
+        android:id="@+id/etSonSayi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60ssp"
+        android:background="@drawable/rectangular_field"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Derginin Son Sayısını Giriniz (URL) "
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuncelle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Güncelle"
+        android:textSize="@dimen/_15ssp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="?android:attr/listDivider"
+        android:outlineAmbientShadowColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="vertical">
+
+        <EditText
+
+            android:id="@+id/bildirimBaslik"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:hint="Mesaj Başlığı" />
+
+        <EditText
+            android:id="@+id/bildirimIcerik"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:hint="Mesaj İçeriği" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBildirim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="Bildirim Yolla" />
+</LinearLayout>
