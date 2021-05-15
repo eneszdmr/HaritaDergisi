@@ -41,7 +41,7 @@ import retrofit2.Response;
 
 public class sonSayiFragment extends Fragment implements ValueEventListener {
 
-    EditText etSonSayi, bildirimBaslik, bildirimIcerik;
+    EditText etSonSayi, bildirimBaslik, bildirimIcerik,userTB;
     Button btnGuncelle, btnBildirim;
     private APIService apiService;
 
@@ -57,15 +57,50 @@ public class sonSayiFragment extends Fragment implements ValueEventListener {
 
         etSonSayi = v.findViewById(R.id.etSonSayi);
         bildirimBaslik = v.findViewById(R.id.bildirimBaslik);
+        userTB = v.findViewById(R.id.userTB);
         bildirimIcerik = v.findViewById(R.id.bildirimIcerik);
         btnGuncelle = v.findViewById(R.id.btnGuncelle);
         btnBildirim = v.findViewById(R.id.btnBildirim);
+
         apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
+
+
+
         btnBildirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // FirebaseDatabase.getInstance().getReference().child("Tokens").child(UserTb.get)
-                Toast.makeText(getContext(), "Hata alındı !", Toast.LENGTH_SHORT).show();
+
+                AlertDialog dialogum = new AlertDialog.Builder(getContext())
+                        .setTitle("Kullanıcılara Bildirim Gönderilecektir, Emin misiniz ?")
+                        .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                FirebaseDatabase.getInstance().getReference().child("Tokens").child(userTB.getText().toString().trim()).child("token").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String userToken=snapshot.getValue(String.class);
+                                        sendNotifications(userToken,bildirimBaslik.getText().toString().trim(),bildirimIcerik.getText().toString().trim());
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                        Toast.makeText(getContext(), "Hata alındı !", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+
+                                Toast.makeText(getContext(), "Bildirim Gönderilmiştir.", Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .setNegativeButton("Hayır", null).show();
+
+
+
+
+
             }
         });
 
@@ -75,8 +110,9 @@ public class sonSayiFragment extends Fragment implements ValueEventListener {
         btnGuncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 AlertDialog dialog = new AlertDialog.Builder(getContext())
-                        .setTitle("Derginin Son Sayısı Güncellenecektir?")
+                        .setTitle("Derginin Son Sayısı Güncellenecektir, Emin misiniz ?")
                         .setPositiveButton("Güncelle", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {

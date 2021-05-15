@@ -1,6 +1,5 @@
 package com.hgm.haritagenelmudurlugu.Admin.SendNotif;
 
-import android.provider.ContactsContract;
 
 public class NotificationSender {
     public Data data;

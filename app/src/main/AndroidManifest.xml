@@ -16,6 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HaritaGenelMudurlugu"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".Admin.SendNotif.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Admin.SendNotif.MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".SiteActivities.KurulActivities.bilimActivity"></activity>
         <activity android:name=".SiteActivities.KurulActivities.yonetimActivity" />
         <activity android:name=".Admin.LoginActivity" />

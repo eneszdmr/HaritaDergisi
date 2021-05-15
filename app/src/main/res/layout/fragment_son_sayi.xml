@@ -47,27 +47,39 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:orientation="vertical">
+        <EditText
+
+            android:id="@+id/userTB"
+            android:text="xMc1aVQu1LPgtC3TKppy2oSPedK2"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:hint="ID" />
+
 
         <EditText
 
             android:id="@+id/bildirimBaslik"
-            android:layout_width="@dimen/_150sdp"
+            android:layout_width="@dimen/_250sdp"
             android:layout_height="wrap_content"
+            android:text="Harita Dergisi"
             android:hint="Mesaj Başlığı" />
 
         <EditText
             android:id="@+id/bildirimIcerik"
             android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
+            android:text="165. sayısı yayımlanmıştır."
             android:hint="Mesaj İçeriği" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btnBildirim"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="@dimen/_15ssp"
         android:text="Bildirim Yolla" />
 </LinearLayout>
