@@ -38,7 +38,6 @@ public class ArchiveActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference("dergiArsivi");
         recyclerView = findViewById(R.id.RV);
         list = new ArrayList<>();
-        //listeler();
         recyclerView.setHasFixedSize(true);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -74,17 +73,5 @@ public class ArchiveActivity extends AppCompatActivity {
         });
 
     }
-/*
-    private void listeler() {
-        list.add(new PDFModel("Harita Dergisi 165. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-165-sayi-1276.pdf"));
-        list.add(new PDFModel("Harita Dergisi 164. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-164-sayi-1274.pdf"));
-        list.add(new PDFModel("Harita Dergisi 163. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-163-sayi-56.pdf"));
-        list.add(new PDFModel("Harita Dergisi 162. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-162-sayi-54.pdf"));
-        list.add(new PDFModel("Harita Dergisi 161. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-161-sayi-53.pdf"));
-        list.add(new PDFModel("Harita Dergisi 160. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-160-sayi-52.pdf"));
-        list.add(new PDFModel("Harita Dergisi 159. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-159-sayi-51.pdf"));
-        list.add(new PDFModel("Harita Dergisi 158. Sayı", "https://www.harita.gov.tr/uploads/files/mapmagazines/harita-dergisi-158-sayi-50.pdf"));
-    }
 
- */
 }

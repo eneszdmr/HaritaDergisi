@@ -7,12 +7,11 @@
    <item android:title="">
        <menu>
 
-           <item
-               android:id="@+id/action_makaleSorgu"
-               android:title="Makale Sorgulama" />
+
            <item
                android:id="@+id/action_sonSayi"
                android:title="Son Sayı" />
+
            <item
                android:id="@+id/action_arsiv"
                android:title="Dergi Arşivi" />
@@ -23,6 +22,9 @@
            <item
                android:id="@+id/action_bilim"
                android:title="Dergi Bilim Kurulu" />
+           <item
+               android:id="@+id/action_makaleSorgu"
+               android:title="Makale Sorgulama" />
 
            <item
                android:id="@+id/cikis"

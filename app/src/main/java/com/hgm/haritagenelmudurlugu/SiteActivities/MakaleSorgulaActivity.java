@@ -83,7 +83,11 @@ public class MakaleSorgulaActivity extends AppCompatActivity implements SearchVi
                 for (DataSnapshot d:dataSnapshot.getChildren()){
                     Makaleler makaleler=d.getValue(Makaleler.class);
 
-                    if (makaleler.getMakale_adi().contains(aramaKelimesi)){
+                    if (makaleler.getMakale_adi().contains(aramaKelimesi)
+                            || makaleler.getMakale_sayi().contains(aramaKelimesi)
+                            || makaleler.getMakale_yazar().contains(aramaKelimesi)
+                    || makaleler.getMakale_yil().contains(aramaKelimesi)){
+
                         makaleler.setMakale_id(d.getKey());
                         makalelerArrayList.add(makaleler);
                     }

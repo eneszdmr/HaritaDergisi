@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
 
-                //Toast.makeText(getApplicationContext(),"tıkladınız "+item.getId(),Toast.LENGTH_SHORT).show();
+
             }
         });
     }
