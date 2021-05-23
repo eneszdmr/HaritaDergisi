@@ -53,11 +53,17 @@ public class LoginActivity extends AppCompatActivity {
         String pass = password.getText().toString();
 
         if (TextUtils.isEmpty(user)) {
+
+            username.setFocusable(true);
             username.setError("Email Giriniz !");
+            username.requestFocus();
             return;
         } else if (TextUtils.isEmpty(pass)) {
+            password.setFocusable(true);
             password.setError("Parola Giriniz !");
-        }
+            password.requestFocus();
+            return;
+        }else{
         progressDialog.setMessage("Lütfen Bekleyiniz...");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
@@ -78,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
+    }
     }
 
     @Override

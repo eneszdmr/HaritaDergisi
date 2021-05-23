@@ -2,6 +2,7 @@ package com.hgm.haritagenelmudurlugu.Admin.ozelSayilar;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,15 +105,6 @@ public class ozelSayiFragment extends Fragment {
         ad.setPositiveButton("Ekle", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String OzelSayiAdi = etOzelSayiAdi.getText().toString().trim();
-                String OzelSayiDesc= etOzelSayiDesc.getText().toString().trim();
-                String OzelSayiUrl = etOzelSayiUrl.getText().toString().trim();
-
-                String key = myref.push().getKey();
-                PDFModel2 pdfModel = new PDFModel2(key, OzelSayiAdi,OzelSayiDesc, OzelSayiUrl);
-                myref.push().setValue(pdfModel);
-
-                Toast.makeText(getContext(), "Özel Sayılara Dergi eklendi", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -122,6 +114,41 @@ public class ozelSayiFragment extends Fragment {
 
             }
         });
-        ad.create().show();
+        ad.setView(tasarim);
+        AlertDialog dialog = ad.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(etOzelSayiAdi.getText().toString())) {
+                    Toast.makeText(getContext(), "Dergi Adı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etOzelSayiDesc.getText().toString())) {
+                    Toast.makeText(getContext(), "Dergi Açıklama eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etOzelSayiUrl.getText().toString())) {
+                    Toast.makeText(getContext(), "Dergi URL eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else {
+
+                    String OzelSayiAdi = etOzelSayiAdi.getText().toString().trim();
+                    String OzelSayiDesc= etOzelSayiDesc.getText().toString().trim();
+                    String OzelSayiUrl = etOzelSayiUrl.getText().toString().trim();
+
+                    String key = myref.push().getKey();
+                    PDFModel2 pdfModel = new PDFModel2(key, OzelSayiAdi,OzelSayiDesc, OzelSayiUrl);
+                    myref.push().setValue(pdfModel);
+
+                    Toast.makeText(getContext(), "Özel Sayılara Dergi eklendi", Toast.LENGTH_SHORT).show();
+
+
+
+                }
+                dialog.dismiss();
+            }
+        });
     }
 }

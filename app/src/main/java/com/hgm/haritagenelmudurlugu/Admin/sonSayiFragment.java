@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,11 +118,18 @@ public class sonSayiFragment extends Fragment implements ValueEventListener {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 String dergisonsayi = etSonSayi.getText().toString();
-                                mHeadingReference.setValue(dergisonsayi);
-                                etSonSayi.setText(dergisonsayi);
 
-                                Toast.makeText(getContext(), "URL Güncellenmiştir.", Toast.LENGTH_SHORT).show();
+                                if (TextUtils.isEmpty(dergisonsayi)) {
+                                    etSonSayi.setError("Eksik bilgi");
+                                    etSonSayi.requestFocus();
+                                } else {
 
+                                    mHeadingReference.setValue(dergisonsayi);
+                                    etSonSayi.setText(dergisonsayi);
+
+                                    Toast.makeText(getContext(), "URL Güncellenmiştir.", Toast.LENGTH_SHORT).show();
+
+                                }
                             }
                         })
                         .setNegativeButton("iptal", null).show();

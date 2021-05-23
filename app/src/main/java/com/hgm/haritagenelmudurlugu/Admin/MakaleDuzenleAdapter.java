@@ -2,6 +2,7 @@ package com.hgm.haritagenelmudurlugu.Admin;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -120,44 +121,68 @@ public class MakaleDuzenleAdapter extends RecyclerView.Adapter<MakaleDuzenleAdap
         EditText editTextMakaleYazar = tasarim.findViewById(R.id.etYazar);
         EditText editTextMakaleUrl = tasarim.findViewById(R.id.etOzelSayiUrl);
 
-        editTextMakaleAdi.setText(makale.getMakale_adi());
-        editTextMakaleSayi.setText(makale.getMakale_sayi());
-        editTextMakaleUrl.setText(makale.getMakale_url());
-        editTextMakaleYazar.setText(makale.getMakale_yazar());
-        editTextMakaleyil.setText(makale.getMakale_yil());
-
-        AlertDialog.Builder ad = new AlertDialog.Builder(mContext);
-        ad.setTitle("Makale Güncelle");
-        ad.setView(tasarim);
-        ad.setPositiveButton("Güncelle", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String makaleAdi = editTextMakaleAdi.getText().toString().trim();
-                String makaleyil = editTextMakaleyil.getText().toString().trim();
-                String makaleSayi = editTextMakaleSayi.getText().toString().trim();
-                String makaleYazar = editTextMakaleYazar.getText().toString().trim();
-                String makaleUrl = editTextMakaleUrl.getText().toString().trim();
 
 
-                Map<String,Object> bilgiler =new HashMap<>();
-                bilgiler.put("makale_adi",makaleAdi);
-                bilgiler.put("makale_yil",makaleyil);
-                bilgiler.put("makale_sayi",makaleSayi);
-                bilgiler.put("makale_yazar",makaleYazar);
-                bilgiler.put("makale_url",makaleUrl);
+            editTextMakaleAdi.setText(makale.getMakale_adi());
+            editTextMakaleSayi.setText(makale.getMakale_sayi());
+            editTextMakaleUrl.setText(makale.getMakale_url());
+            editTextMakaleYazar.setText(makale.getMakale_yazar());
+            editTextMakaleyil.setText(makale.getMakale_yil());
 
-                myref.child(makale.getMakale_id()).updateChildren(bilgiler);
+            AlertDialog.Builder ad = new AlertDialog.Builder(mContext);
+            ad.setTitle("Makale Güncelle");
+            ad.setView(tasarim);
+            ad.setPositiveButton("Güncelle", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String makaleAdi = editTextMakaleAdi.getText().toString().trim();
+                    String makaleyil = editTextMakaleyil.getText().toString().trim();
+                    String makaleSayi = editTextMakaleSayi.getText().toString().trim();
+                    String makaleYazar = editTextMakaleYazar.getText().toString().trim();
+                    String makaleUrl = editTextMakaleUrl.getText().toString().trim();
 
-                Toast.makeText(mContext, "Makale Güncellendi", Toast.LENGTH_SHORT).show();
+                    if (TextUtils.isEmpty(makaleAdi)) {
+                        editTextMakaleAdi.setFocusable(true);
+                        editTextMakaleAdi.setError("eksik");
+                        editTextMakaleAdi.requestFocus();
+                    } else if(TextUtils.isEmpty(makaleyil)){
+                        editTextMakaleyil.setFocusable(true);
+                        editTextMakaleyil.setError("eksik");
+                        editTextMakaleyil.requestFocus();
+                    }else if(TextUtils.isEmpty(makaleSayi)){
+                        editTextMakaleSayi.setFocusable(true);
+                        editTextMakaleSayi.setError("eksik");
+                        editTextMakaleSayi.requestFocus();
+                    }else if(TextUtils.isEmpty(makaleYazar)){
+                        editTextMakaleYazar.setFocusable(true);
+                        editTextMakaleYazar.setError("eksik");
+                        editTextMakaleYazar.requestFocus();
+                    }else{
 
-            }
-        });
-        ad.setNegativeButton("İptal", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+                        Map<String, Object> bilgiler = new HashMap<>();
+                        bilgiler.put("makale_adi", makaleAdi);
+                        bilgiler.put("makale_yil", makaleyil);
+                        bilgiler.put("makale_sayi", makaleSayi);
+                        bilgiler.put("makale_yazar", makaleYazar);
+                        bilgiler.put("makale_url", makaleUrl);
 
-            }
-        });
-        ad.create().show();
-    }
+                        myref.child(makale.getMakale_id()).updateChildren(bilgiler);
+
+                        Toast.makeText(mContext, "Makale Güncellendi", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            });
+
+            ad.setNegativeButton("İptal", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            ad.create().show();
+        }
+
+
 }

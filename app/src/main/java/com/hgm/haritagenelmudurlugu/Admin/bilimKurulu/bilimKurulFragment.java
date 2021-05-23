@@ -2,6 +2,7 @@ package com.hgm.haritagenelmudurlugu.Admin.bilimKurulu;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,16 +108,6 @@ public class bilimKurulFragment extends Fragment {
         ad.setPositiveButton("Ekle", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String unvan = etUnvani.getText().toString().trim();
-                String adiSoyadi= etAdiSoyadi.getText().toString().trim();
-                String kurumu = etKurumu.getText().toString().trim();
-                String bransi = etBransi.getText().toString().trim();
-
-                String key = myref.push().getKey();
-                BilimModel bilimModel = new BilimModel(key,unvan,adiSoyadi,kurumu,bransi);
-                myref.push().setValue(bilimModel);
-
-                Toast.makeText(getContext(), "Bilim Kuruluna yeni kayıt eklendi", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -126,6 +117,46 @@ public class bilimKurulFragment extends Fragment {
 
             }
         });
-        ad.create().show();
+
+        ad.setView(tasarim);
+        AlertDialog dialog = ad.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(etUnvani.getText().toString())) {
+                    Toast.makeText(getContext(), "ünvan eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etAdiSoyadi.getText().toString())) {
+                    Toast.makeText(getContext(), "Adı Soyadı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etKurumu.getText().toString())) {
+                    Toast.makeText(getContext(), "Kurumu eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etBransi.getText().toString())) {
+                    Toast.makeText(getContext(), "Branşı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    String unvan = etUnvani.getText().toString().trim();
+                    String adiSoyadi = etAdiSoyadi.getText().toString().trim();
+                    String kurumu = etKurumu.getText().toString().trim();
+                    String bransi = etBransi.getText().toString().trim();
+
+                    String key = myref.push().getKey();
+                    BilimModel bilimModel = new BilimModel(key, unvan, adiSoyadi, kurumu, bransi);
+                    myref.push().setValue(bilimModel);
+
+                    Toast.makeText(getContext(), "Bilim Kuruluna yeni kayıt eklendi", Toast.LENGTH_SHORT).show();
+
+                }
+
+                dialog.dismiss();
+
+
+            }
+        });
     }
 }

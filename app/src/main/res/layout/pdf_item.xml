@@ -24,7 +24,7 @@
             android:layout_height="@dimen/_110sdp"
             android:background="#FCE0E0"
             android:layout_gravity="top"
-            android:src="@drawable/pdfpng" />
+            android:src="@drawable/pdficon" />
 
         <TextView
             android:id="@+id/TV"

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,15 +106,6 @@ public class dergiArsivFragment extends Fragment {
         ad.setPositiveButton("Ekle", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String arsivAdi = etArsivAdi.getText().toString().trim();
-                String arsivTarihi= etArsivTarihi.getText().toString().trim();
-                String arsivUrl = etArsivUrl.getText().toString().trim();
-
-                String key = myref.push().getKey();
-                PDFModel pdfModel = new PDFModel(key, arsivAdi,arsivTarihi, arsivUrl);
-                myref.push().setValue(pdfModel);
-
-                Toast.makeText(getContext(), "Arşive Dergi eklendi", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -123,6 +115,42 @@ public class dergiArsivFragment extends Fragment {
 
             }
         });
-        ad.create().show();
+        ad.setView(tasarim);
+        AlertDialog dialog = ad.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(etArsivAdi.getText().toString())) {
+                    Toast.makeText(getContext(), "Arşiv Adı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etArsivTarihi.getText().toString())) {
+                    Toast.makeText(getContext(), "Arşiv Tarihi eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(etArsivUrl.getText().toString())) {
+                    Toast.makeText(getContext(), "Arşiv URL eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else {
+
+                    String arsivAdi = etArsivAdi.getText().toString().trim();
+                    String arsivTarihi= etArsivTarihi.getText().toString().trim();
+                    String arsivUrl = etArsivUrl.getText().toString().trim();
+
+                    String key = myref.push().getKey();
+                    PDFModel pdfModel = new PDFModel(key, arsivAdi,arsivTarihi, arsivUrl);
+                    myref.push().setValue(pdfModel);
+
+                    Toast.makeText(getContext(), "Arşive Dergi eklendi", Toast.LENGTH_SHORT).show();
+
+
+
+
+                }
+                dialog.dismiss();
+            }
+        });
     }
 }

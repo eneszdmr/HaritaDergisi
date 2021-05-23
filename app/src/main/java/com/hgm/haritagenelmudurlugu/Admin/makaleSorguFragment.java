@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,17 +89,7 @@ public class makaleSorguFragment extends Fragment {
         ad.setPositiveButton("Ekle", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String makaleAdi = editTextMakaleAdi.getText().toString().trim();
-                String makaleyil = editTextMakaleyil.getText().toString().trim();
-                String makaleSayi = editTextMakaleSayi.getText().toString().trim();
-                String makaleYazar = editTextMakaleYazar.getText().toString().trim();
-                String makaleUrl = editTextMakaleUrl.getText().toString().trim();
 
-                String key=myref.push().getKey();
-                Makaleler mkl=new Makaleler(key,makaleAdi,makaleyil,makaleSayi,makaleYazar,makaleUrl);
-                myref.push().setValue(mkl);
-
-                Toast.makeText(getContext(), "makale eklendi", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -108,7 +99,47 @@ public class makaleSorguFragment extends Fragment {
 
             }
         });
-        ad.create().show();
+        ad.setView(tasarim);
+        AlertDialog dialog = ad.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(editTextMakaleAdi.getText().toString())) {
+                    Toast.makeText(getContext(), "Makale Adı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(editTextMakaleyil.getText().toString())) {
+                    Toast.makeText(getContext(), "Makale Yıl eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(editTextMakaleSayi.getText().toString())) {
+                    Toast.makeText(getContext(), "Makale Sayı eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(editTextMakaleYazar.getText().toString())) {
+                    Toast.makeText(getContext(), "Makale Yazar eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(editTextMakaleUrl.getText().toString())) {
+                    Toast.makeText(getContext(), "Makale URL eksik", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    String makaleAdi = editTextMakaleAdi.getText().toString().trim();
+                    String makaleyil = editTextMakaleyil.getText().toString().trim();
+                    String makaleSayi = editTextMakaleSayi.getText().toString().trim();
+                    String makaleYazar = editTextMakaleYazar.getText().toString().trim();
+                    String makaleUrl = editTextMakaleUrl.getText().toString().trim();
+                    String key = myref.push().getKey();
+                    Makaleler mkl = new Makaleler(key, makaleAdi, makaleyil, makaleSayi, makaleYazar, makaleUrl);
+                    myref.push().setValue(mkl);
+
+                    Toast.makeText(getContext(), "makale eklendi", Toast.LENGTH_SHORT).show();
+
+                }
+                dialog.dismiss();
+            }
+        });
     }
 
     public void TumMakaleler() {
