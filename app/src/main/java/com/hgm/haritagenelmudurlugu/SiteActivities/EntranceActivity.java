@@ -30,7 +30,7 @@ public class EntranceActivity extends AppCompatActivity {
     ImageView imageViewLogo, imageShine;
     TextView textViewLogo;
 
-
+// 2 ayrı animasyon sırayla çalışır
 
 
     @Override

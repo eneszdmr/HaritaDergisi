@@ -82,7 +82,7 @@ public class MakaleSorgulaActivity extends AppCompatActivity implements SearchVi
                 makalelerArrayList.clear();
                 for (DataSnapshot d:dataSnapshot.getChildren()){
                     Makaleler makaleler=d.getValue(Makaleler.class);
-
+//burası arama ekranı her listeden arama yapar
                     if (makaleler.getMakale_adi().contains(aramaKelimesi)
                             || makaleler.getMakale_sayi().contains(aramaKelimesi)
                             || makaleler.getMakale_yazar().contains(aramaKelimesi)

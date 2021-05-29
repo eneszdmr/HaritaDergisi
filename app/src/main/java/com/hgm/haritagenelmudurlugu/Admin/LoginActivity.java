@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
+// user and password check
     private void login() {
         String user = username.getText().toString();
         String pass = password.getText().toString();

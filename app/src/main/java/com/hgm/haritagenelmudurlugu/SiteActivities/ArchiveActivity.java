@@ -43,6 +43,7 @@ public class ArchiveActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
 
         ItemClickListener itemClickListener = new ItemClickListener() {
+            //interface ile tıklanma olayınde ne yapılacağı seçilir
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent = new Intent(ArchiveActivity.this, PDFActivity.class);

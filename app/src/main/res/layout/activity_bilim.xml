@@ -36,6 +36,7 @@
     </TableRow>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
+        android:layoutAnimation="@anim/layout_fall_dawn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

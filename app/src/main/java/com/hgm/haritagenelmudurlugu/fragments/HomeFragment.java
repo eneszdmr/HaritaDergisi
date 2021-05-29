@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment implements ValueEventListener{
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         tanimlamalar(rootView);
         textson = rootView.findViewById(R.id.textson);
-
+//dashboard içerisinde 2 string değiştirilebilir
         String makaleEsas = "https://www.harita.gov.tr/uploads/files-folder/makale_yazim_esaslari.pdf";
         String makaleSablon = "https://www.harita.gov.tr/uploads/files-folder/makale_yazim_sablonu.pdf";
 

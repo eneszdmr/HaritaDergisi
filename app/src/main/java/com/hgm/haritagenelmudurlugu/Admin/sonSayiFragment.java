@@ -175,7 +175,7 @@ public class sonSayiFragment extends Fragment implements ValueEventListener {
         super.onStart();
         mHeadingReference.addValueEventListener(this);
     }
-
+//son sayi güncelleme (update)
     @Override
     public void onDataChange(@NonNull DataSnapshot snapshot) {
         if (snapshot.getValue(String.class) != null) {

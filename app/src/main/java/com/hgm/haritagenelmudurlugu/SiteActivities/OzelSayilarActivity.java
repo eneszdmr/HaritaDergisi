@@ -38,6 +38,7 @@ public class OzelSayilarActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.RV);
         database= FirebaseDatabase.getInstance().getReference("ozelSayilar");
        // listelerim();
+        //örnek olarak bir array list oluşturur ve içerisine veritabanından gelen veriler listelenir
         listOzel = new ArrayList<>();
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 

@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.home));
         bottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.navigation));
 
+// 3 ayrı fragment bulunan main acitivity
+
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override

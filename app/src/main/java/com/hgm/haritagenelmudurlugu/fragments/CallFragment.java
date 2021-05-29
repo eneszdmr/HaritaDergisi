@@ -32,7 +32,7 @@ static int i=0;
         call_title = rootView.findViewById(R.id.call_title);
         btninstagram = rootView.findViewById(R.id.btninstagram);
         btntwitter = rootView.findViewById(R.id.btntwitter);
-
+//social media buttons
         call_title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
